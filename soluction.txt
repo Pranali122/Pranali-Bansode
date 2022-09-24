@@ -1,0 +1,27 @@
+dbda@dbda-VirtualBox:~/PRAJKTA/iacsd$ ls
+f1.txt  f2.txt  f3.txt  f4.txt  f5.txt
+dbda@dbda-VirtualBox:~/PRAJKTA/iacsd$ zip ZIP.zip *.txt 
+  adding: f1.txt (stored 0%)
+  adding: f2.txt (stored 0%)
+  adding: f3.txt (stored 0%)
+  adding: f4.txt (stored 0%)
+  adding: f5.txt (stored 0%)
+dbda@dbda-VirtualBox:~/PRAJKTA/iacsd$ ls
+f1.txt  f2.txt  f3.txt  f4.txt  f5.txt  ZIP.zip
+dbda@dbda-VirtualBox:~/PRAJKTA/iacsd$ mv ZIP.zip ../
+dbda@dbda-VirtualBox:~/PRAJKTA/iacsd$ ls
+f1.txt  f2.txt  f3.txt  f4.txt  f5.txt
+dbda@dbda-VirtualBox:~/PRAJKTA/iacsd$ cd ..
+dbda@dbda-VirtualBox:~/PRAJKTA$ ls
+iacsd  ZIP.zip
+dbda@dbda-VirtualBox:~/PRAJKTA$ unzip ZIP.zip
+Archive:  ZIP.zip
+ extracting: f1.txt                  
+ extracting: f2.txt                  
+ extracting: f3.txt                  
+ extracting: f4.txt                  
+ extracting: f5.txt                  
+dbda@dbda-VirtualBox:~/PRAJKTA$ ls
+f1.txt  f2.txt  f3.txt  f4.txt  f5.txt  iacsd  ZIP.zip
+dbda@dbda-VirtualBox:~/PRAJKTA$ 
+
