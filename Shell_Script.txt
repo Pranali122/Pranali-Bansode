@@ -1,0 +1,79 @@
+#!/bin/bash 
+
+echo "Enter the principle : "
+read p
+echo "Enter the rate : "
+read r
+echo "Enter the number of years : "
+read n
+si=`expr $p \* $n \* $r / 100`
+echo "Simple interest on the entered principle : "
+echo $si
+#!/bin/bash
+--------------------------------------------------------------------------------------------------------------------------
+echo "Enter the basic salary : "
+read basic 
+
+dp=`echo "0.5 * $basic "|bc `
+da=`echo "0.35 * ($basic + $dp)" |bc `
+hra=`echo "0.08 *  ($basic + $dp)" |bc `
+ma=`echo "0.03 * ($basic + $dp)" |bc `
+pf=`echo "0.10 *  ($basic + $dp)" |bc `
+
+salary=`echo  "$basic + $dp +$da + $hra + $ma - $pf" |bc `
+
+echo "Salary = "
+echo $salary
+-------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+echo "Enter number1 : "
+read num1
+echo "Enter number2 : "
+read num2
+
+sum=`echo "scale=2; $num1 + $num2" | bc`
+echo "Addition : "
+echo "$sum"
+
+sub=`echo "scale=2; $num1 - $num2" | bc `
+echo "Subraction : "
+echo "$sub"
+
+mul=`echo " $num1  * $num2 " | bc `
+echo "Multiplication : "
+echo "$mul"
+
+div=`echo " $num1 / $num2 " | bc `
+echo "Division : "
+echo "$div"
+------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash 
+
+echo "Enter 3 numbers : "
+read n1
+read n2
+read n3
+sum=`echo " scale=2; $n1 + $n2 + $n3" | bc `
+avg=`echo " scale=2; $sum / 3 " | bc ` 
+echo "Avrage of entered numbers : "
+echo $avg
+
+------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+echo "Enter marks of subject1(Out of 100) : "
+read m1
+echo "Enter marks of subject2(Out of 100) : "
+read m2
+echo "Enter marks of subject3(Out of 100) : "
+read m3
+avg=`echo "($m1 + $m2 + $m3) / 3"|bc`
+if [ $avg -gt 50 ]
+then
+        echo "First Class"
+elif [ $avg -le 50 ]  && [ $avg -ge 40 ]
+then
+        echo "Second Class"
+else
+        echo "Fail"
+fi

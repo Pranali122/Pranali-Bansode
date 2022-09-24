@@ -1,0 +1,297 @@
+dbda@dbda-VirtualBox:~/friends$ cd ~
+dbda@dbda-VirtualBox:~$ ls
+batman    dir2       f2.txt     friends     metadata1.txt      newfile.txt  Pictures      root.txt         softlink   test.txt
+data1     dirlink1   family     hardlink    Music              newlink      prajakta      sample           sunday     Text.txt
+Data1     dirlink2   file       Hello2.txt  my_file            num          Prajakta.txt  sample.sh        Sunday     Videos
+dbda.txt  Documents  file1      hi.txt      my_file_soft_link  number2.txt  Prajkta       shaktiman        sunday1    work
+Desktop   Downloads  file2      link        name.txt           number.txt   Pranali.txt   shell_scripting  superman   zingalala.txt
+dir1      f1.txt     file_link  linked2     newdir             orgin2       Public        snap             Templates  zingu.txt
+dbda@dbda-VirtualBox:~$ cd family/
+dbda@dbda-VirtualBox:~/family$ ls
+film3.avi  film4.avi  snap3.jpg  snap4.jpg  songs3.mp3  songs4.mp3
+dbda@dbda-VirtualBox:~/family$ rm *
+dbda@dbda-VirtualBox:~/family$ ls
+dbda@dbda-VirtualBox:~/family$ cd ~
+dbda@dbda-VirtualBox:~$ cd friends/
+dbda@dbda-VirtualBox:~/friends$ ls
+film1.avi  film2.avi  snap1.jpg  snap2.jpg  songs1.mp3  songs2.mp3
+dbda@dbda-VirtualBox:~/friends$ cd ..
+dbda@dbda-VirtualBox:~$ ls
+batman    dir2       f2.txt     friends     metadata1.txt      newfile.txt  Pictures      root.txt         softlink   test.txt
+data1     dirlink1   family     hardlink    Music              newlink      prajakta      sample           sunday     Text.txt
+Data1     dirlink2   file       Hello2.txt  my_file            num          Prajakta.txt  sample.sh        Sunday     Videos
+dbda.txt  Documents  file1      hi.txt      my_file_soft_link  number2.txt  Prajkta       shaktiman        sunday1    work
+Desktop   Downloads  file2      link        name.txt           number.txt   Pranali.txt   shell_scripting  superman   zingalala.txt
+dir1      f1.txt     file_link  linked2     newdir             orgin2       Public        snap             Templates  zingu.txt
+dbda@dbda-VirtualBox:~$ rm -r f
+f1.txt     f2.txt     family/    file/      file1      file2/     file_link/ friends/   
+dbda@dbda-VirtualBox:~$ rm -r friends/
+dbda@dbda-VirtualBox:~$ ls
+batman    dir2       f2.txt     hardlink       Music              newlink      prajakta      sample           sunday     Text.txt
+data1     dirlink1   family     Hello2.txt     my_file            num          Prajakta.txt  sample.sh        Sunday     Videos
+Data1     dirlink2   file       hi.txt         my_file_soft_link  number2.txt  Prajkta       shaktiman        sunday1    work
+dbda.txt  Documents  file1      link           name.txt           number.txt   Pranali.txt   shell_scripting  superman   zingalala.txt
+Desktop   Downloads  file2      linked2        newdir             orgin2       Public        snap             Templates  zingu.txt
+dir1      f1.txt     file_link  metadata1.txt  newfile.txt        Pictures     root.txt      softlink         test.txt
+dbda@dbda-VirtualBox:~$ sudo -s
+[sudo] password for dbda: 
+root@dbda-VirtualBox:/home/dbda# useradd tom
+root@dbda-VirtualBox:/home/dbda# useradd bob
+root@dbda-VirtualBox:/home/dbda# id tom
+uid=1005(tom) gid=1005(tom) groups=1005(tom)
+root@dbda-VirtualBox:/home/dbda# id bob
+uid=1006(bob) gid=1006(bob) groups=1006(bob)
+root@dbda-VirtualBox:/home/dbda# passwd tom
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+root@dbda-VirtualBox:/home/dbda# passwd bob
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: password updated successfully
+root@dbda-VirtualBox:/home/dbda# useradd sam
+root@dbda-VirtualBox:/home/dbda# useradd prince
+root@dbda-VirtualBox:/home/dbda# passwd sam
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+root@dbda-VirtualBox:/home/dbda# passwd prince
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+root@dbda-VirtualBox:/home/dbda# id dac
+uid=1002(dac) gid=1002(dac) groups=1002(dac)
+root@dbda-VirtualBox:/home/dbda# useradd ditiss
+root@dbda-VirtualBox:/home/dbda# id ditiss
+uid=1009(ditiss) gid=1009(ditiss) groups=1009(ditiss)
+root@dbda-VirtualBox:/home/dbda# usermod -g dac tom
+root@dbda-VirtualBox:/home/dbda# id tom
+uid=1005(tom) gid=1002(dac) groups=1002(dac)
+root@dbda-VirtualBox:/home/dbda# usermod -g dbda bob
+root@dbda-VirtualBox:/home/dbda# id bob
+uid=1006(bob) gid=1000(dbda) groups=1000(dbda)
+root@dbda-VirtualBox:/home/dbda# usermod -g ditiss sam
+root@dbda-VirtualBox:/home/dbda# id sam
+uid=1007(sam) gid=1009(ditiss) groups=1009(ditiss)
+root@dbda-VirtualBox:/home/dbda# whoami
+root
+root@dbda-VirtualBox:/home/dbda# su prince
+$ whoami
+prince
+$ ls
+batman	  dir2	     f2.txt	hardlink       Music		  newlink      prajakta      sample	      sunday	 Text.txt
+data1	  dirlink1   family	Hello2.txt     my_file		  num	       Prajakta.txt  sample.sh	      Sunday	 Videos
+Data1	  dirlink2   file	hi.txt	       my_file_soft_link  number2.txt  Prajkta	     shaktiman	      sunday1	 work
+dbda.txt  Documents  file1	link	       name.txt		  number.txt   Pranali.txt   shell_scripting  superman	 zingalala.txt
+Desktop   Downloads  file2	linked2        newdir		  orgin2       Public	     snap	      Templates  zingu.txt
+dir1	  f1.txt     file_link	metadata1.txt  newfile.txt	  Pictures     root.txt      softlink	      test.txt
+$ find tmp
+find: ‘tmp’: No such file or directory
+$ pwd  
+/home/dbda
+$ cd ..
+$ pwd                     
+/home
+$ cd ..
+$ pwd
+/
+$ ls
+bin   cdrom  etc    home  lib32  libx32      media  opt   root	sbin  softlink	swapfile  tmp  var
+boot  dev    file1  lib   lib64  lost+found  mnt    proc  run	snap  srv	sys	  usr
+$ find tmp
+tmp
+tmp/.X1025-lock
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-logind.service-ML6y8U
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-logind.service-ML6y8U’: Permission denied
+tmp/.ICE-unix
+tmp/.ICE-unix/940
+tmp/.ICE-unix/1534
+tmp/VMwareDnD
+tmp/.X11-unix
+tmp/.X11-unix/X1
+tmp/.X11-unix/X1024
+tmp/.X11-unix/X0
+tmp/.X11-unix/X1025
+tmp/snap.snapd-desktop-integration
+find: ‘tmp/snap.snapd-desktop-integration’: Permission denied
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-switcheroo-control.service-rM2mqS
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-switcheroo-control.service-rM2mqS’: Permission denied
+tmp/.font-unix
+tmp/.X1-lock
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-oomd.service-lkkcGk
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-oomd.service-lkkcGk’: Permission denied
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-colord.service-zj8e1N
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-colord.service-zj8e1N’: Permission denied
+tmp/.Test-unix
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-upower.service-zobnMW
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-upower.service-zobnMW’: Permission denied
+tmp/tracker-extract-3-files.1000
+find: ‘tmp/tracker-extract-3-files.1000’: Permission denied
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-resolved.service-ScjJsF
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-resolved.service-ScjJsF’: Permission denied
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-ModemManager.service-qKO0po
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-ModemManager.service-qKO0po’: Permission denied
+tmp/.X0-lock
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-power-profiles-daemon.service-To3vUn
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-power-profiles-daemon.service-To3vUn’: Permission denied
+tmp/.X1024-lock
+tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-timesyncd.service-pk96H3
+find: ‘tmp/systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-timesyncd.service-pk96H3’: Permission denied
+tmp/tracker-extract-3-files.127
+find: ‘tmp/tracker-extract-3-files.127’: Permission denied
+tmp/.XIM-unix
+$ cd tmp
+$ pwd
+/tmp
+$ mkdir iacsddirectory
+$ ls
+iacsddirectory
+snap.snapd-desktop-integration
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-colord.service-zj8e1N
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-ModemManager.service-qKO0po
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-power-profiles-daemon.service-To3vUn
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-switcheroo-control.service-rM2mqS
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-logind.service-ML6y8U
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-oomd.service-lkkcGk
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-resolved.service-ScjJsF
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-systemd-timesyncd.service-pk96H3
+systemd-private-4eb7df909d7343c5b79692fd76a7b51a-upower.service-zobnMW
+tracker-extract-3-files.1000
+tracker-extract-3-files.127
+VMwareDnD
+$ cd iacsddirectory
+$ pwd
+/tmp/iacsddirectory
+$ touch project-1 project-2 project-3 project-4        
+$ ls -l
+total 0
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ chown tom project-1
+chown: changing ownership of 'project-1': Operation not permitted
+$ cd ..
+$ chmod 777 iacsddirectory
+$ cd iacsddirectory
+$ chown tom project-1
+chown: changing ownership of 'project-1': Operation not permitted
+$ chmod 777 project-1 
+$ chown tom project-1
+chown: changing ownership of 'project-1': Operation not permitted
+$ whoami
+prince
+$ ls -l
+total 0
+-rwxrwxrwx 1 prince prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ sudo chown tom project-1
+[sudo] password for prince: 
+prince is not in the sudoers file.  This incident will be reported.
+$ ls -l
+total 0
+-rwxrwxrwx 1 prince prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ chown tom prince project-1
+chown: cannot access 'prince': No such file or directory
+chown: changing ownership of 'project-1': Operation not permitted
+$ chmod 777 project-1
+$ ls -l
+total 0
+-rwxrwxrwx 1 prince prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ chown tom prince project-1
+chown: cannot access 'prince': No such file or directory
+chown: changing ownership of 'project-1': Operation not permitted
+$ se^R
+  
+$ usermod -aG sudo prince
+usermod: Permission denied.
+usermod: cannot lock /etc/passwd; try again later.
+$ usermod -aG sudo prince
+usermod: Permission denied.
+usermod: cannot lock /etc/passwd; try again later.
+$ whoami
+prince
+$ exit
+root@dbda-VirtualBox:/home/dbda# whoami
+root
+root@dbda-VirtualBox:/home/dbda# usermod -aG sudo prince
+root@dbda-VirtualBox:/home/dbda# su prince
+$ cd iacsddirectory
+sh: 1: cd: can't cd to iacsddirectory
+$ cd tmp
+sh: 2: cd: can't cd to tmp
+$ cd /tmp
+$ cd iacsddirectory
+$ sudo chown tom project-1
+[sudo] password for prince: 
+$ ls -l
+total 0
+-rwxrwxrwx 1 tom    prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ pwd
+/tmp/iacsddirectory
+$ whoami
+prince
+$ chown dac project
+chown: cannot access 'project': No such file or directory
+$ chown dac project-2
+chown: changing ownership of 'project-2': Operation not permitted
+$ sudo chown dac project-2
+$ ls -l
+total 0
+-rwxrwxrwx 1 tom    prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 dac    prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ sudo chown tom project-3
+$ ls -l
+total 0
+-rwxrwxrwx 1 tom    prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 dac    prince 0 Sep 19 12:19 project-2
+-rw-rw-r-- 1 tom    prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ chmod 660 project-3
+chmod: changing permissions of 'project-3': Operation not permitted
+$ 
+$ sudo chmod 660 project-3
+$ ls -l
+total 0
+-rwxrwxrwx 1 tom    prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 dac    prince 0 Sep 19 12:19 project-2
+-rw-rw---- 1 tom    prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince prince 0 Sep 19 12:19 project-4
+$ sudo chgrp dbda project-4
+$ ls -l
+total 0
+-rwxrwxrwx 1 tom    prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 dac    prince 0 Sep 19 12:19 project-2
+-rw-rw---- 1 tom    prince 0 Sep 19 12:19 project-3
+-rw-rw-r-- 1 prince dbda   0 Sep 19 12:19 project-4
+$ sudo chmod 070 project-4
+$ ls -l
+total 0
+-rwxrwxrwx 1 tom    prince 0 Sep 19 12:19 project-1
+-rw-rw-r-- 1 dac    prince 0 Sep 19 12:19 project-2
+-rw-rw---- 1 tom    prince 0 Sep 19 12:19 project-3
+----rwx--- 1 prince dbda   0 Sep 19 12:19 project-4
+$ ^A^A^A^A^A^A^A^A
+
+

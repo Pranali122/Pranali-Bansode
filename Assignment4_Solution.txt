@@ -1,0 +1,199 @@
+#!bin/bash
+echo "First 10 natural numbers : "
+for i in {1..10}
+do
+	echo -n "$i "
+done
+#!/bin/bash
+
+sum=0
+for i in {1..10}
+do
+	sum=`expr $sum + $i`
+done
+echo "Sum of first 10 natural numbers : $sum"
+
+#!/bin/bash
+sum=0
+echo "Enter number : "
+read n
+echo "First $n natural numbers : "
+for (( i=1; i<=$n ;i++ ))
+do 
+	echo -n "$i "
+done
+
+for (( i=1; i<=$n ;i++ ))
+do 
+        sum=`expr $sum + $i`
+done
+echo -e "\nSum of first $n natural numbers : $sum"
+#!/bin/bash
+
+sum=0
+echo "Enter the 10 numbers : "
+for ((i=1;i<=10;i++))
+do
+ 	read n
+	sum=`expr $sum + $n`
+done
+echo "Sum of entered numbers : "
+echo $sum
+
+avg=`echo " scale=5;  $sum / 10 " | bc`
+echo "Average of entered numbers : "
+echo $avg
+#!/bin/bash
+
+echo "Enter an +ve integer : "
+read n
+for (( i=1; i<=$n; i++ ))
+do
+	cube=`expr $i \* $i \* $i`
+	echo "Number is : $i and Cube of the $i is : $cube"
+done
+#!bin/bash
+
+echo "Enter integer :"
+read n
+echo "Table of $n : "
+for((i=1 ; i<=10 ;i++))
+do
+	echo  "$i X $n = " `expr  $i \* $n`
+done
+#!/bin/bash
+
+echo "Enter a number : "
+read n
+
+for (( i=1; i<=10; i++ ))
+do
+	for (( j=1; j<=$n; j++ ))
+	do
+		x=`expr $j \* $i`
+		echo -ne "$j X $i = $x\t"
+		x=1
+	done
+	echo
+done
+#!/bin/bash
+
+echo "Enter input : "
+read n
+sum=0
+count=1
+echo "First $n odd numbers : "
+i=1
+while [ $count -le $n ]
+do
+	if [[ $(( $i % 2 ))  -ne 0 ]]
+	then 
+		echo $i
+		count=`expr $count + 1`
+		sum=`expr $sum + $i`
+	fi
+	i=`expr $i + 1`
+done
+echo "Sum of odd natural numbers upto $n terms : $sum"
+#!/bin/bash
+
+echo "Enter number 1 : "
+read n1
+echo "Enter number 2 : "
+read n2
+if [ $n1 -gt $n2 ] 
+then
+	echo "Number1,$n1 is greater than number2,$n2."
+else
+	echo "Number2,$n2 is greater than number1,$n1."
+fi
+#!/bin/bash 
+echo "Enter a integer : "
+read n
+
+if [ $n -eq 0 ] 
+then
+	echo "Entered integer is zero."
+elif [ $n -gt 0 ] 
+then
+	echo "Entered integer is positive."
+else 
+	echo "Entered integer is negative."
+fi
+#!/bin/bash
+echo "Enter the number : "
+read num
+
+if [ `expr $num % 5` -eq 0 ] && [ `expr $num % 11` -eq 0 ]
+then
+	echo "Entered number is divisible by both 5 and 11."
+else
+	echo "Entered number is not divisible by 5 and 11."
+fi
+#!/bin/bash
+
+echo "Enter a natural number to check for even/odd : "
+read n
+if [ `expr $n % 2` -eq 0 ]
+then 
+	echo "Entered number is even."
+else
+	echo "Entered number is odd."
+fi
+#!/bin/bash
+
+echo "Enter a year to check for leap : "
+read year
+if [ `expr $year % 4` -eq 0 ] 
+then 
+	if [ `expr $year % 400` -eq 0 ] 
+	then
+		echo "Entered year is leap year."
+	elif [ `expr $year % 100` -eq 0 ]
+	then
+		echo "Entered year is not leap year."
+	else
+		echo "Entered year is leap year."
+	fi
+else
+	echo "Entered year is not leap year."
+fi
+#!/bin/bash
+echo "Enter marks of five Subject(Out of 100) : "
+echo "Physics : "
+read phy
+echo "Chemistry : "
+read chem
+echo "Biology : "
+read bio
+echo "Maths : "
+read Maths
+echo "Computer : "
+read comp
+
+sum=`expr  $phy + $chem + $bio + $Maths + $comp `
+echo "Total marks obtained : "
+echo $sum
+
+Percentage=`echo " $sum / 5 " | bc`
+echo "Percentage : " $Percentage
+
+if [ $Percentage -ge 90 ]
+then
+	echo "Grade A"
+elif [ $Percentage -ge 80 ]
+then 
+	echo "Grade B"
+elif [ $Percentage -ge 70 ]
+then 
+        echo "Grade C"
+elif [ $Percentage -ge 60 ]
+then 
+        echo "Grade D"
+elif [ $Percentage -ge 40 ]
+then 
+        echo "Grade E"
+elif [ $Percentage -lt 40 ]
+then 
+        echo "Grade F"
+fi
